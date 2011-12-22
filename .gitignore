@@ -6,3 +6,4 @@ local
 Scripts
 .Python
 *.pyc
+*.swp
