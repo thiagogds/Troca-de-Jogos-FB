@@ -6,7 +6,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    (r'canvas/', include('app.core.urls', namespace='core')),
+    (r'', include('app.core.urls', namespace='core')),
     # Examples:
     # url(r'^$', 'src.views.home', name='home'),
     # url(r'^src/', include('src.foo.urls')),
