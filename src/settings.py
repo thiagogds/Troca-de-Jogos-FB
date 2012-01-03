@@ -139,7 +139,3 @@ LOGGING = {
         },
     }
 }
-
-#Facebook
-FACEBOOK_APP_ID = '252015428199446'
-FACEBOOK_APP_SECRET = 'e535b56beb800f84490ae60ecafafa0e'
