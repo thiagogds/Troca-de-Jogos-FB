@@ -92,6 +92,7 @@ TEMPLATE_DIRS = (
     os.path.join(PROJECT_DIR, 'templates'),
 )
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -100,6 +101,13 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
 )
+
+AUTHENTICATION_BACKENDS = (
+    'userena.backends.UserenaAuthenticationBackend',
+    'guardian.backends.ObjectPermissionBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
 
 ROOT_URLCONF = 'src.urls'
 
@@ -112,8 +120,26 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.admindocs',
+    'userena',
+    'guardian',
+    'easy_thumbnails',
+    'app.profiles',
     'app.core',
 )
+
+# Userena settings
+LOGIN_REDIRECT_URL = '/conta/%(username)s/'
+LOGIN_URL = '/conta/signin/'
+LOGOUT_URL = '/conta/signout/'
+AUTH_PROFILE_MODULE = 'profiles.Profile'
+
+USERENA_DISABLE_PROFILE_LIST = True
+USERENA_MUGSHOT_SIZE = 140
+
+# Guardian
+ANONYMOUS_USER_ID = -1
+
+
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

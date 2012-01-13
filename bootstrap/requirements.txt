@@ -3,3 +3,4 @@ ipython
 ipdb
 south
 psycopg2
+django-userena
