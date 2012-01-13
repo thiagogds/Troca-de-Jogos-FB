@@ -1,4 +1,4 @@
-from lib.testtools import TestCase
+from addons.testtools import TestCase
 
 
 class TestHome(TestCase):

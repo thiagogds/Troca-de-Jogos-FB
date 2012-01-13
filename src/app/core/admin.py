@@ -1,7 +1,7 @@
 from django.contrib import admin
 from models import Game
 
-from lib.decorators import admin_attrs
+from addons.decorators import admin_attrs
 
 class GameAdmin(admin.ModelAdmin):
     list_display = ['cover_image', 'name']
